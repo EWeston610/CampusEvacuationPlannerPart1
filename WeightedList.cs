@@ -87,6 +87,23 @@ class WeightedList
         return rooms;
     }
 
+    public int ComputeTotalEvacuationTime()
+    {
+        var rooms = GetRoomNodes();
+        var exits = GetExitNodes();
+
+        int total = 0;
+
+        foreach (var room in rooms)
+        {
+            var (distance, path) = Dijkstra(room, exits);
+            total += distance;
+        }
+
+        return total;
+    }
+
+
     public void FindAndDisplayQuickestExits()
     {
         var rooms = GetRoomNodes();

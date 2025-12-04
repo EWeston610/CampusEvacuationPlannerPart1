@@ -10,12 +10,15 @@ class Program
 
         BuildingData.LoadGraph(list);
 
-        //list.DisplayAll();
-        //Console.WriteLine();
+        list.DisplayAll();
+        Console.WriteLine();
 
         //list.DisplaySummary();
         //Console.WriteLine();
 
         list.FindAndDisplayQuickestExits();
+
+        int totalTime = list.ComputeTotalEvacuationTime();
+        Console.WriteLine($"Total evacuation time = {totalTime}");
     }
 }
